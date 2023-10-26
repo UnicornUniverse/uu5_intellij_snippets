@@ -1,0 +1,107 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.unicorn.uu5_intellij_snippets</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>uu5 Snippets</name>
+    <version>0.0.2</version>
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor>unicorn-universe</vendor>
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    <p>This extension contains collection live templates for the uu5 front-end library:</p>
+    <ul>
+        <li>
+            <p>
+                Handles creating boilerplate objects and functions that follow uu5 guidelines
+            </p>
+        </li>
+        <li>
+            <p>
+                Acts as as shortcut for some of more common tasks.
+            </p>
+        </li>
+    </ul>
+
+    <h2>Supported triggers</h2>
+    <ul>
+        <li>
+            <p>
+                <strong>uu5Brick</strong> - Template of uu5 Brick Component.
+            </p>
+        </li>
+        <li>
+            <p>
+                <strong>uu5Call</strong> - Method in calls.js with mapping of parameters to HTTP request.
+            </p>
+        </li>
+        <li>
+            <p>
+                <strong>uu5Context</strong> - Template of uu5 Context.
+            </p>
+        </li>
+        <li>
+            <p>
+                <strong>uu5CssFunction</strong> - Item of Css object with function calling Config.Css.css module.
+            </p>
+        </li>
+        <li>
+            <p>
+                <strong>uu5CssSection</strong> - Css section with comments and Css object declaration.
+            </p>
+        </li>
+        <li>
+            <p>
+                <strong>uu5GetAttrs</strong> - Call of Uu5.Utils.VisualComponent.getAttrs method.
+            </p>
+        </li>
+        <li>
+            <p>
+                <strong>uu5LogError</strong> - Call of Component.logger.error method.
+            </p>
+        </li>
+        <li>
+            <p>
+                <strong>uu5LogDebug</strong> - Call of Component.logger.debug method.
+            </p>
+        </li>
+        <li>
+            <p>
+                <strong>uu5LogInfo</strong> - Call of Component.logger.info method.
+            </p>
+        </li>
+        <li>
+            <p>
+                <strong>uu5LogWarning</strong> - Call of Component.logger.warning method.
+            </p>
+        </li>
+        <li>
+            <p>
+                <strong>uu5VisualComponent</strong> - Template of uu5 Visual Component.
+            </p>
+        </li>
+        <li>
+            <p>
+                <strong>uu5SplitProps</strong> - Call of Uu5.Utils.VisualComponent.splitProps method.
+            </p>
+        </li>
+    </ul>
+    <p>Show details in Preferences -> Editor -> Live Templates -> uu5 Snippets.</p>
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <defaultLiveTemplates file="/liveTemplates/Uu5.xml"/>
+        <liveTemplateContext implementation="com.unicorn.uu5_intellij_snippets.Uu5TemplateProvider" />
+    </extensions>
+</idea-plugin>

@@ -1,0 +1,91 @@
+<templateSet group="Uu5">
+    <template name="uu5VisualComponent" value="//@@viewOn:imports&#10;import { createVisualComponent, Utils } from &quot;uu5g05&quot;;&#10;import Config from &quot;./config/config.js&quot;;&#10;//@@viewOff:imports&#10;&#10;const $COMPONENT$ = createVisualComponent({&#10;  //@@viewOn:statics&#10;  uu5Tag: Config.TAG + &quot;$COMPONENT$&quot;,&#10;  //@@viewOff:statics&#10;&#10;  //@@viewOn:propTypes&#10;  propTypes: {$PROPTYPES$},&#10;  //@@viewOff:propTypes&#10;&#10;  //@@viewOn:defaultProps&#10;  defaultProps: {$DEFAULTPROPTYPES$},&#10;  //@@viewOff:defaultProps&#10;&#10;  render(props) {&#10;    //@@viewOn:render&#10;    $BODY$&#10;    //@@viewOff:render&#10;  },&#10;});&#10;&#10;//@@viewOn:exports&#10;export { $COMPONENT$ };&#10;export default $COMPONENT$;&#10;//@@viewOff:exports&#10;" description="Template of uu5 Visual Component." toReformat="false" toShortenFQNames="true">
+        <variable name="COMPONENT" expression="capitalize(camelCase(fileNameWithoutExtension()))" defaultValue="" alwaysStopAt="true" />
+        <variable name="PROPTYPES" expression="" defaultValue="" alwaysStopAt="true" />
+        <variable name="DEFAULTPROPTYPES" expression="" defaultValue="" alwaysStopAt="true" />
+        <variable name="BODY" expression="" defaultValue="" alwaysStopAt="true" />
+        <context>
+            <option name="JAVA_SCRIPT" value="true" />
+        </context>
+    </template>
+    <template name="uu5GetAttrs" value="    const attrs = Utils.VisualComponent.getAttrs(props$CSS$);" description="Call of Uu5.Utils.VisualComponent.getAttrs method." toReformat="false" toShortenFQNames="true">
+        <variable name="CSS" expression="enum(&quot;,Css.main()&quot;, &quot;&quot;)" defaultValue="" alwaysStopAt="true" />
+        <context>
+            <option name="JAVA_SCRIPT" value="true" />
+        </context>
+    </template>
+    <template name="uu5SplitProps" value="const { elementProps$COMPONENTPROPS$} = Utils.VisualComponent.splitProps(props$CSS$);" description="Call of Uu5.Utils.VisualComponent.splitProps method." toReformat="false" toShortenFQNames="true">
+        <variable name="COMPONENTPROPS" expression="enum(&quot;, componentProps&quot;,&quot; &quot;)" defaultValue="" alwaysStopAt="true" />
+        <variable name="CSS" expression="enum(&quot;, Css.main()&quot;,&quot;&quot;)" defaultValue="" alwaysStopAt="true" />
+        <context>
+            <option name="JAVA_SCRIPT" value="true" />
+        </context>
+    </template>
+    <template name="uu5Brick" value="//@@viewOn:imports&#10;import { $INCOMP$ } from &quot;$INCOMPSRC$&quot;;&#10;import { withErrorBoundary } from &quot;uu_plus4u5g02-elements&quot;;&#10;import { withEditMode, withMargin } from &quot;uu5g05-editing&quot;;&#10;import EditModal from &quot;./$COMP$/edit-modal&quot;;&#10;//@@viewOff:imports&#10;&#10;let $COMP$ = $INCOMP$.$COMP$;&#10;$COMP$ = withMargin($COMP$);&#10;$COMP$ = withEditMode($COMP$, EditModal);&#10;$COMP$ = withErrorBoundary($COMP$);&#10;&#10;//@@viewOn:exports&#10;export { $COMP$ };&#10;export default $COMP$;&#10;//@@viewOff:exports&#10;" description="Template of uu5 Brick Component." toReformat="false" toShortenFQNames="true">
+        <variable name="INCOMP" expression="" defaultValue="User" alwaysStopAt="true" />
+        <variable name="INCOMPSRC" expression="" defaultValue="" alwaysStopAt="true" />
+        <variable name="COMP" expression="capitalize(camelCase(fileNameWithoutExtension()))" defaultValue="" alwaysStopAt="true" />
+        <context>
+            <option name="JAVA_SCRIPT" value="true" />
+        </context>
+    </template>
+    <template name="uu5Call" value="$NAME$(dtoIn, baseUri) {&#10;  let commandUri = Calls.getCommandUri(&quot;$ENDPOINT$&quot;, baseUri);&#10;  return Calls.call(&quot;$METHOD$&quot;, commandUri, dtoIn);&#10;}," description="Method in calls.js with mapping of parameters to HTTP request." toReformat="false" toShortenFQNames="true">
+        <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+        <variable name="ENDPOINT" expression="" defaultValue="" alwaysStopAt="true" />
+        <variable name="METHOD" expression="enum(&quot;post&quot;,&quot;get&quot;)" defaultValue="" alwaysStopAt="true" />
+        <context>
+            <option name="JAVA_SCRIPT" value="true" />
+        </context>
+    </template>
+    <template name="uu5Context" value="//@@viewOn:imports&#10;import { Utils } from &quot;uu5g05&quot;;&#10;//@@viewOff:imports&#10;&#10;export const [Context, use$CONTEXT$] = Utils.Context.create();&#10;export default Context;&#10;" description="Template of uu5 Context." toReformat="false" toShortenFQNames="true">
+        <variable name="CONTEXT" expression="capitalize(camelCase(fileNameWithoutExtension()))" defaultValue="" alwaysStopAt="true" />
+        <context>
+            <option name="JAVA_SCRIPT" value="true" />
+        </context>
+    </template>
+    <template name="uu5CssFunction" value="$NAME$: ($ARGS$) =&gt; Config.Css.css({$BODY$})," description="Item of Css object with function calling Config.Css.css module." toReformat="false" toShortenFQNames="true">
+        <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+        <variable name="ARGS" expression="" defaultValue="" alwaysStopAt="true" />
+        <variable name="BODY" expression="" defaultValue="" alwaysStopAt="true" />
+        <context>
+            <option name="JAVA_SCRIPT" value="true" />
+        </context>
+    </template>
+    <template name="uu5CssSection" value="//@@viewOn:css&#10;const Css = {&#10;  $FUNC$: ($ARGS$) =&gt; Config.Css.css({$BODY$}),&#10;};&#10;//@@viewOff:css" description="Css section with comments and Css object declaration." toReformat="false" toShortenFQNames="true">
+        <variable name="FUNC" expression="" defaultValue="" alwaysStopAt="true" />
+        <variable name="ARGS" expression="" defaultValue="" alwaysStopAt="true" />
+        <variable name="BODY" expression="" defaultValue="" alwaysStopAt="true" />
+        <context>
+            <option name="JAVA_SCRIPT" value="true" />
+        </context>
+    </template>
+    <template name="uu5LogError" value="$COMP$.logger.error(`$MESSAGE$`, $ERROR$);" description="Call of Component.logger.error method." toReformat="false" toShortenFQNames="true">
+        <variable name="COMP" expression="capitalize(camelCase(fileNameWithoutExtension()))" defaultValue="" alwaysStopAt="true" />
+        <variable name="MESSAGE" expression="" defaultValue="&quot;message&quot;" alwaysStopAt="true" />
+        <variable name="ERROR" expression="" defaultValue="error" alwaysStopAt="true" />
+        <context>
+            <option name="JAVA_SCRIPT" value="true" />
+        </context>
+    </template>
+    <template name="uu5LogDebug" value="$COMP$.logger.debug($MESSAGE$);" description="Call of Component.logger.debug method." toReformat="false" toShortenFQNames="true">
+        <variable name="COMP" expression="capitalize(camelCase(fileNameWithoutExtension()))" defaultValue="" alwaysStopAt="true" />
+        <variable name="MESSAGE" expression="" defaultValue="&quot;message&quot;" alwaysStopAt="true" />
+        <context>
+            <option name="JAVA_SCRIPT" value="true" />
+        </context>
+    </template>
+    <template name="uu5LogInfo" value="$COMP$.logger.info($MESSAGE$);" description="Call of Component.logger.info method." toReformat="false" toShortenFQNames="true">
+        <variable name="COMP" expression="capitalize(camelCase(fileNameWithoutExtension()))" defaultValue="" alwaysStopAt="true" />
+        <variable name="MESSAGE" expression="" defaultValue="&quot;message&quot;" alwaysStopAt="true" />
+        <context>
+            <option name="JAVA_SCRIPT" value="true" />
+        </context>
+    </template>
+    <template name="uu5LogWarning" value="$COMP$.logger.warning($MESSAGE$);" description="Call of Component.logger.warning method." toReformat="false" toShortenFQNames="true">
+        <variable name="COMP" expression="capitalize(camelCase(fileNameWithoutExtension()))" defaultValue="" alwaysStopAt="true" />
+        <variable name="MESSAGE" expression="" defaultValue="&quot;message&quot;" alwaysStopAt="true" />
+        <context>
+            <option name="JAVA_SCRIPT" value="true" />
+        </context>
+    </template>
+</templateSet>

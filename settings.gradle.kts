@@ -1,0 +1,1 @@
+rootProject.name = "uu5_intellij_snippets"
